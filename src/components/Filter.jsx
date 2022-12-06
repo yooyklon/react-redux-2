@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -16,7 +16,7 @@ export default function Filter() {
   return (
     <div className="filter-box">
       <input
-        className="filter"
+        className="filter-input"
         placeholder="Поиск..."
         value={search}
         onChange={handleChange}

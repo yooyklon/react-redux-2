@@ -32,7 +32,7 @@ export default function widgetReducer(state = initialState, action) {
       const { currentId } = action.payload;
       state.form.id = currentId;
       const currentElement = state.list.find(el => el.id === currentId);
-      return { list: state.list.filter(el => el.id !== currentId), form: { service: currentElement.service, price: currentElement.price } };
+      return { ...state, list: state.list.filter(el => el.id !== currentId), form: { service: currentElement.service, price: currentElement.price } };
     case 'SEARCH_CHANGE_WIDGET':
       const { searchValue } = action.payload;
       return {
